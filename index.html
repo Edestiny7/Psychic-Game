@@ -3,9 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <!--<link rel="stylesheet" href="./assets/css/reset.css">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <script type="text/javascript" src="./assets/javascript/game.js"></script>
+
     <title>The Psychic Game</title>
 </head>
 
@@ -23,17 +25,17 @@
                         <p id="wins-text"></p>
                     </div>
                     <div class="col-6">
-                        <p id="directions-text">Guess the letter I am thinking of</p>
+                        <p id="directions-text">Enter the letter I'm thinking of</p>
                     </div>
                     <div class="col-3">
                         <p id="losses-text"></p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-7">
                         <p id="userSelection-text"></p>
                     </div>
-                    <div class="col-6">
+                    <div class="col-5">
                         <p id="guessesRemaining-text"></p>
                     </div>
                 </div>
@@ -41,48 +43,7 @@
         </section>
     </main>
 
-    <script type="text/javascript">
-
-        // Psychic letter selection from the js function
-        let psychicChoice = random_letter(psychicSelection);
-        let guessesRemaining = 9;
-        let userSelection = [];
-        let psychicScore = 0;
-        let userScore = 0;
-
-        //Variable references
-        let winsText = document.getElementById("wins-text");
-        let lossesText = document.getElementById("losses-text");
-        let guessesRemainingText = document.getElementById("guessesRemaining-text");
-        let userSelectionText = document.getElementById("userSelection-text");
-
-        //Runs when user enters guess
-        reset();
-        document.onkeyup = function (event) {
-
-            // User guess
-            let userChoice = event.key.toLowerCase();
-
-            if (guessesRemaining != 0) {
-                guessesRemaining = (guessesRemaining - 1);
-                userSelection.push(userChoice);
-                if (userChoice === psychicChoice) {
-                    userScore++;
-                    guessesRemaining = 0;
-                    reset();
-                } else if (guessesRemaining == 0) {
-                    psychicScore++
-                    reset();
-                }
-            }
-
-            winsText.textContent = "Wins: " + userScore;
-            lossesText.textContent = "Losses: " + psychicScore;
-            guessesRemainingText.textContent = "Guesses remaining: " + guessesRemaining;
-            userSelectionText.textContent = "Your guesses so far: " + userSelection.join();
-        }
-    </script>
-
 </body>
+<script type="text/javascript" src="./assets/javascript/game.js"></script>
 
 </html>
