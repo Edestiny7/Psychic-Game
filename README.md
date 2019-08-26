@@ -9,6 +9,6 @@ Limit registered key presses to letters only
 
 ![alt text](./assets/images/psychicGame.JPG "Psychic Game")
 
-### [Go To:](https://Edestiny7.github.io/Psychic-Game/)
+### [Try the Game!](https://Edestiny7.github.io/Psychic-Game/)
 
 Technology: HTML5 | CSS3 | Bootstrap | JavaScript | Google Fonts
