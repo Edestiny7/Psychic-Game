@@ -34,6 +34,11 @@ $(function() {
         // User guess
         let userChoice = event.key.toLowerCase();
 
+        //65=a, 90=z
+        if (event.which < 65 || event.which > 90) {
+            return false;
+        }
+
         if (guessesRemaining != 0) {
             guessesRemaining = (guessesRemaining - 1);
             userSelection.push(userChoice);
